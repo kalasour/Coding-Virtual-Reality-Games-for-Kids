@@ -7,6 +7,7 @@ namespace VHS
     {
         #region Data
             [BoxGroup("Input Data")]
+            public float mouseMultiple = 1;
             public CameraInputData cameraInputData;
             [BoxGroup("Input Data")]
             public MovementInputData movementInputData;
@@ -48,8 +49,8 @@ namespace VHS
 
             void GetCameraInput()
             {
-                cameraInputData.InputVectorX = Input.GetAxis("Mouse X");
-                cameraInputData.InputVectorY = Input.GetAxis("Mouse Y");
+                cameraInputData.InputVectorX = Input.GetAxis("Mouse X")*mouseMultiple;
+                cameraInputData.InputVectorY = Input.GetAxis("Mouse Y")*mouseMultiple;
 
                 cameraInputData.ZoomClicked = Input.GetMouseButtonDown(1);
                 cameraInputData.ZoomReleased = Input.GetMouseButtonUp(1);
