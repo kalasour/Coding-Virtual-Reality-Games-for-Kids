@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PackContent
+  - Block
+  - CodeContent
+  - Canvas
+  - Panel
+  - Temp
   layers:
   - Default
   - TransparentFX
@@ -17,7 +23,7 @@ TagManager:
   - Ground
   - Interactable
   - Pickable
-  - 
+  - Grabale
   - 
   - 
   - 
