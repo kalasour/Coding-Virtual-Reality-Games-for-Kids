@@ -111,7 +111,7 @@ public class OVRSceneSampleController : MonoBehaviour
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
         }
-
+            
         // CameraController updates
         if (cameraController != null)
         {

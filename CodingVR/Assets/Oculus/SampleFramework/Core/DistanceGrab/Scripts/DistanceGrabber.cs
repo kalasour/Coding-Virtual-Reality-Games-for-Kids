@@ -140,7 +140,7 @@ namespace OculusSampleFramework
         {
             DistanceGrabbable closestGrabbable = m_target;
             Collider closestGrabbableCollider = m_targetCollider;
-
+            
             GrabVolumeEnable(false);
 
             if (closestGrabbable != null)
