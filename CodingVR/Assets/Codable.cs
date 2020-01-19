@@ -17,8 +17,16 @@ public class Codable : MonoBehaviour
         if (isForward)
         {
             transform.position = new Vector3(transform.position.x-0.1f, transform.position.y, transform.position.z);
+            if (transform.childCount > 0)
+            {
+                Transform fChild = transform.GetChild(0);
+                fChild.position = new Vector3(fChild.position.x - 0.1f, fChild.position.y, fChild.position.z);
+            }
+
             isForward = false;
         }
+
+        
     }
 
     public void Turn()
