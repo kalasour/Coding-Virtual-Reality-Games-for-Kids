@@ -12,16 +12,16 @@ public class Codable : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isForward)
         {
-            transform.position = new Vector3(transform.position.x-0.1f, transform.position.y, transform.position.z);
-            if (transform.childCount > 0)
-            {
-                Transform fChild = transform.GetChild(0);
-                fChild.position = new Vector3(fChild.position.x - 0.1f, fChild.position.y, fChild.position.z);
-            }
+            transform.Translate(-0.1f, 0, 0,Space.World);
+           // if (transform.childCount > 0)
+           // {
+           //     Transform fChild = transform.GetChild(0);
+           //     fChild.Translate(-0.1f, 0, 0);
+           // }
 
             isForward = false;
         }
