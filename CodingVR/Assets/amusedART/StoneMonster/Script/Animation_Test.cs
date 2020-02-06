@@ -9,33 +9,61 @@ public class Animation_Test : MonoBehaviour {
 	public const string ATTACK	= "Anim_Attack";
 	public const string DAMAGE	= "Anim_Damage";
 	public const string DEATH	= "Anim_Death";
+    private string currentAnim = "";
+    public bool isDeath = false;
 
 	Animation anim;
 
 	void Start () {
-
-		anim = GetComponent<Animation>();
+        currentAnim = IDLE;
+        anim = GetComponent<Animation>();
 		
 	}
-	
-	public void IdleAni (){
+
+    private void Update()
+    {
+        if (!anim.isPlaying) {
+            if (isDeath)
+            {
+                Object.Destroy(gameObject, 0.5f);
+            }
+            else
+            {
+                currentAnim = IDLE;
+                anim.Play(IDLE);
+            }
+        }
+    }
+
+    public void IdleAni (){
+        currentAnim = IDLE;
 		anim.CrossFade (IDLE);
 	}
 
+    public bool isCanAttack() {
+        return currentAnim == IDLE || currentAnim == ATTACK || currentAnim == RUN;
+    }
+
 	public void RunAni (){
-		anim.CrossFade (RUN);
+        currentAnim = RUN;
+        anim.CrossFade (RUN);
 	}
 
 	public void AttackAni (){
-		anim.CrossFade (ATTACK);
+        currentAnim = ATTACK;
+        anim.CrossFade (ATTACK);
 	}
 
 	public void DamageAni (){
-		anim.CrossFade (DAMAGE);
+        currentAnim = DAMAGE;
+        anim.CrossFade (DAMAGE);
+        
 	}
 
 	public void DeathAni (){
-		anim.CrossFade (DEATH);
+        currentAnim = DEATH;
+        isDeath = true;
+        anim.CrossFade (DEATH);
 	}
 
 }

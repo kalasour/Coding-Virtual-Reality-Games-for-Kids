@@ -16,7 +16,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         damage = rigidbody.velocity.magnitude*10;
+         damage = rigidbody.velocity.magnitude * 3;
         Label.text = "Damage : " + ((int)damage).ToString();
     }
 }

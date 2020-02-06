@@ -39,6 +39,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         public Vector3 AbsolutePosition()
         {
             Vector3 parentScale = GameObject.FindWithTag("Canvas").transform.localScale;
+            Vector3 parentPos = GameObject.FindWithTag("Canvas").transform.localPosition;
             float tempX1 = 0;
             if (this.connectionType == ConnectionType.Next)
             {
@@ -86,16 +87,15 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                         ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1)).y;
             }
 
-
-
-            return this.ownerBlock.transform.position +
-                new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x,
-                    ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1,0);
+            
+          return  new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x + this.ownerBlock.transform.position.x,
+                    ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1 + this.ownerBlock.transform.position.y,
+                    this.ownerBlock.transform.position.z);
 
         }
         float DistanceTo(Connection connection)
         {
-            return Vector2.Distance(this.AbsolutePosition(), connection.AbsolutePosition());
+            return Vector3.Distance(this.AbsolutePosition(), connection.AbsolutePosition());
         }
         public bool TryAttachWithBlock(Block block)
         {
@@ -107,7 +107,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                     this.connectedBlock == null &&
                     (this.acceptableBlockType & block.GetBlockType()) != BlockType.BlockTypeNone &&
                     (connection.acceptableBlockType & ownerBlock.GetBlockType()) != BlockType.BlockTypeNone &&
-                    this.DistanceTo(connection) < kMinimumAttachRadius)
+                    this.DistanceTo(connection) <= kMinimumAttachRadius)
                 {
 
                     if (this.ownerBlock.connections.IndexOf(this) == 0)
