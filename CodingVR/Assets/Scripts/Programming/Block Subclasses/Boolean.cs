@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Boolean : Block
 {
     public string var;
+    public string ID;
     public Text childText;
     public bool value = false;
     override public bool CheckCond()
@@ -11,7 +12,7 @@ public class Boolean : Block
         // Debug.Log(get.getDistance());
         // Debug.Log(get.getDistance());
 
-        return value;
+        return !value;
     }
     // private void Start() {
     // 	childText.text=name;
@@ -21,7 +22,7 @@ public class Boolean : Block
         if(value)
             gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         else
-            gameObject.GetComponent<Image>().color = new Color32(0, 0, 225, 255);
+            gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
 
     }
 
