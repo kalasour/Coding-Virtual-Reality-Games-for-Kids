@@ -13,8 +13,9 @@ public class Animation_Test : MonoBehaviour {
     public bool isDeath = false;
 
 	Animation anim;
+    public GameObject dropItem;
 
-	void Start () {
+    void Start () {
         currentAnim = IDLE;
         anim = GetComponent<Animation>();
 		
@@ -26,6 +27,7 @@ public class Animation_Test : MonoBehaviour {
             if (isDeath)
             {
                 Object.Destroy(gameObject, 0.5f);
+                dropItem.SetActive(true);
             }
             else
             {
