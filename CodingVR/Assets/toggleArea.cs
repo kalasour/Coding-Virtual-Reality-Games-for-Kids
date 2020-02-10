@@ -6,6 +6,7 @@ public class toggleArea : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject targetTrigger;
+    public BooleanExplain targetText;
     public string booString;
     void Start()
     {
@@ -32,6 +33,9 @@ public class toggleArea : MonoBehaviour
                 }
             }
         }
+        if (other.gameObject.CompareTag("Player") && targetText != null) {
+            targetText.isOn = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -50,6 +54,10 @@ public class toggleArea : MonoBehaviour
                     }
                 }
             }
+        }
+        if (other.gameObject.CompareTag("Player") && targetText != null)
+        {
+            targetText.isOn = false;
         }
     }
 }
