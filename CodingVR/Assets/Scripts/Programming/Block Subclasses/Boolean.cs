@@ -12,14 +12,14 @@ public class Boolean : Block
         // Debug.Log(get.getDistance());
         // Debug.Log(get.getDistance());
 
-        return !value;
+        return value;
     }
     // private void Start() {
     // 	childText.text=name;
     // }
     private void FixedUpdate()
     {
-        if(value)
+        if(!value)
             gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
         else
             gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
