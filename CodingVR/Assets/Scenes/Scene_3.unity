@@ -635,6 +635,7 @@ MonoBehaviour:
   targetTrigger: {fileID: 2031539984}
   targetText: {fileID: 1146129384}
   booString: isOnArea
+  state: 0
 --- !u!1 &111590559
 GameObject:
   m_ObjectHideFlags: 0
@@ -15578,6 +15579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3945c0cec08d33143965155408f57968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isForward: 0
+  isTurned: 0
 --- !u!23 &185223328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16042,6 +16045,7 @@ MonoBehaviour:
   targetTrigger: {fileID: 493185128}
   targetText: {fileID: 1146129384}
   booString: isOnArea
+  state: 0
 --- !u!54 &388932858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21194,6 +21198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3945c0cec08d33143965155408f57968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isForward: 0
+  isTurned: 0
 --- !u!23 &493185134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21695,6 +21701,7 @@ MonoBehaviour:
   targetTrigger: {fileID: 493185128}
   targetText: {fileID: 1146129384}
   booString: isOnArea
+  state: 0
 --- !u!1 &672744387
 GameObject:
   m_ObjectHideFlags: 0
@@ -31563,6 +31570,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.7
@@ -36399,6 +36414,7 @@ MonoBehaviour:
   targetTrigger: {fileID: 2031539984}
   targetText: {fileID: 1146129384}
   booString: isOnArea
+  state: 0
 --- !u!1 &781137096
 GameObject:
   m_ObjectHideFlags: 0
@@ -36639,6 +36655,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511062115}
     m_Modifications:
+    - target: {fileID: 1760440962583096, guid: 97f4a8d19ea425a47ae392bde7e260cb, type: 3}
+      propertyPath: m_Name
+      value: DistanceGrabSoccerBallPf
+      objectReference: {fileID: 0}
     - target: {fileID: 4805308755068676, guid: 97f4a8d19ea425a47ae392bde7e260cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5619241
@@ -36682,10 +36702,6 @@ PrefabInstance:
     - target: {fileID: 4805308755068676, guid: 97f4a8d19ea425a47ae392bde7e260cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760440962583096, guid: 97f4a8d19ea425a47ae392bde7e260cb, type: 3}
-      propertyPath: m_Name
-      value: DistanceGrabSoccerBallPf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f4a8d19ea425a47ae392bde7e260cb, type: 3}
@@ -56707,6 +56723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282860155}
   - component: {fileID: 1282860156}
+  - component: {fileID: 1282860157}
   m_Layer: 0
   m_Name: Slime (1)
   m_TagString: Untagged
@@ -56749,6 +56766,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1282860157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282860154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b62c319b1cb442e85e43cfdbb31022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumLookDistance: 30
+  maximumAttackDistance: 10
+  minimumDistanceFromPlayer: 2
+  rotationDamping: 2
+  shotInterval: 0.5
+  speed: 3
 --- !u!4 &1290864219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 481858, guid: cd427f0dc853ec74a9ba1c5ff0e48ca2,
@@ -76881,9 +76916,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDLE: Shoot_BurstShot_AR
   RUN: panic
-  ATTACK: attack_1
+  ATTACK: Shoot_BurstShot_AR
   DAMAGE: get_hit_front
   DEATH: die
+  currentAnim: 
+  isAttack: 0
   isDeath: 0
 --- !u!111 &1760754271
 Animation:
@@ -76965,6 +77002,7 @@ MonoBehaviour:
   targetTrigger: {fileID: 2031539984}
   targetText: {fileID: 1146129384}
   booString: isOnArea
+  state: 0
 --- !u!1 &1778099709
 GameObject:
   m_ObjectHideFlags: 0
@@ -106362,6 +106400,7 @@ MonoBehaviour:
   targetTrigger: {fileID: 2031539984}
   targetText: {fileID: 1146129384}
   booString: isOnArea
+  state: 0
 --- !u!136 &2094509084
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -111322,6 +111361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4885078908406065}
   - component: {fileID: 95471672360383731}
+  - component: {fileID: 1090218836256542}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -111329,6 +111369,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1090218836256542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090218836256541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b62c319b1cb442e85e43cfdbb31022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumLookDistance: 30
+  maximumAttackDistance: 10
+  minimumDistanceFromPlayer: 2
+  rotationDamping: 2
+  shotInterval: 0.5
+  speed: 3
 --- !u!1 &1119626771772692
 GameObject:
   m_ObjectHideFlags: 0
@@ -111651,6 +111709,7 @@ GameObject:
   - component: {fileID: 4015393541743422}
   - component: {fileID: 1142111812}
   - component: {fileID: 1387838941669567}
+  - component: {fileID: 1387838941669568}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -111675,7 +111734,28 @@ MonoBehaviour:
   ATTACK: attack_1
   DAMAGE: get_hit_front
   DEATH: die
+  currentAnim: 
+  isAttack: 0
   isDeath: 0
+--- !u!114 &1387838941669568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387838941669566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbaa32b71654ac448b11b094084c1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 3824607702713100347, guid: 9df28a43bf955ae4ca95cfbfa3fef19c,
+    type: 3}
+  maximumLookDistance: 100
+  maximumAttackDistance: 100
+  minimumDistanceFromPlayer: 2
+  rotationDamping: 2
+  shotInterval: 0.5
 --- !u!1 &1399652523787828
 GameObject:
   m_ObjectHideFlags: 0
@@ -111945,7 +112025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1713780494723388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113032,6 +113112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDeath: 0
+  isAttack: 0
   dropItem: {fileID: 503451765}
 --- !u!114 &114619746070258354
 MonoBehaviour:

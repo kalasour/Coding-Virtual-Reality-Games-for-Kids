@@ -9,21 +9,31 @@ public class Animation_controller : MonoBehaviour {
     public string ATTACK = "attack_1";
     public string DAMAGE = "get_hit_front";
     public string DEATH = "die";
-    private string currentAnim = "";
+    public string currentAnim = "";
+    public bool isAttack = false;
     public bool isDeath = false;
-
+    attakcer att;
     Animation anim;
 
     void Start () {
         currentAnim = IDLE;
         anim = GetComponent<Animation> ();
+        att = GetComponent<attakcer> ();
 
     }
 
     private void Update () {
+        if (att != null)
+            if (att.canShoot () && isCanAttack () && !isAttack) {
+                isAttack = true;
+                AttackAni ();
+            }
         if (!anim.isPlaying) {
             if (isDeath) {
                 Object.Destroy (gameObject, 0.5f);
+            } else if (isAttack) {
+                att.Shoot ();
+                isAttack = false;
             } else {
                 currentAnim = IDLE;
                 anim.Play (IDLE);
