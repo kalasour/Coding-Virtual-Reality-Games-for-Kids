@@ -23,6 +23,36 @@ public class newToggle : MonoBehaviour {
         {
             RunCode();
         }
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            GameObject[] found = GameObject.FindGameObjectsWithTag("Block");
+            foreach (GameObject i in found)
+            {
+                if (i.GetComponent<Boolean>() != null)
+                {
+                    Boolean boo = i.GetComponent<Boolean>();
+                    if (boo.ID == "isB")
+                    {
+                        boo.value = true;
+                    }
+                }
+            }
+        }
+        if (OVRInput.GetUp(OVRInput.Button.Two))
+        {
+            GameObject[] found = GameObject.FindGameObjectsWithTag("Block");
+            foreach (GameObject i in found)
+            {
+                if (i.GetComponent<Boolean>() != null)
+                {
+                    Boolean boo = i.GetComponent<Boolean>();
+                    if (boo.ID == "isB")
+                    {
+                        boo.value = false;
+                    }
+                }
+            }
+        }
         canvasGroup.blocksRaycasts = ActivePanel;
         if (ActivePanel && canvasGroup.alpha <= 1f) {
             canvasGroup.alpha += 0.1f;
