@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class newToggle : MonoBehaviour {
+public class newToggle : MonoBehaviour
+{
     // Start is called before the first frame update
     public CanvasGroup canvasGroup;
 
     private AudioSource aSource;
     public bool ActivePanel = false;
-    void Start () {
+    void Start()
+    {
         // Panel=GameObject.FindWithTag ("Panel");
-        aSource=gameObject.AddComponent<AudioSource>();
+        aSource = gameObject.AddComponent<AudioSource>();
 
     }
 
     // Update is called once per frame
-    void Update () {
-        if (OVRInput.GetDown(OVRInput.Button.Start)) {
+    void Update()
+    {
+        if (OVRInput.GetDown(OVRInput.Button.Start))
+        {
             TaskOnClick();
+        }
+        if (OVRInput.GetDown(OVRInput.Button.Four))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         if (OVRInput.GetDown(OVRInput.Button.Three))
         {
@@ -54,10 +63,12 @@ public class newToggle : MonoBehaviour {
             }
         }
         canvasGroup.blocksRaycasts = ActivePanel;
-        if (ActivePanel && canvasGroup.alpha <= 1f) {
+        if (ActivePanel && canvasGroup.alpha <= 1f)
+        {
             canvasGroup.alpha += 0.1f;
         }
-        if (!ActivePanel && canvasGroup.alpha >= 0) {
+        if (!ActivePanel && canvasGroup.alpha >= 0)
+        {
             canvasGroup.alpha -= 0.1f;
         }
 
@@ -75,12 +86,13 @@ public class newToggle : MonoBehaviour {
         }
     }
 
-    public void TaskOnClick () {
+    public void TaskOnClick()
+    {
         //Output this to console when Button1 or Button3 is clicked
-       // aSource.clip=GameObject.Find("SoundBox").GetComponent<SoundBox>().Command;
-		//if (!aSource.isPlaying) {
-		//	aSource.Play ();
-		//}
+        // aSource.clip=GameObject.Find("SoundBox").GetComponent<SoundBox>().Command;
+        //if (!aSource.isPlaying) {
+        //	aSource.Play ();
+        //}
 
         ActivePanel = !ActivePanel;
 

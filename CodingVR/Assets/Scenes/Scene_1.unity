@@ -33541,6 +33541,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  ray: {fileID: 0}
 --- !u!23 &493185134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45249,6 +45250,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2692246226289293641, guid: 269475d5342b6417ba5121d292b18d76,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692246226289293641, guid: 269475d5342b6417ba5121d292b18d76,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2692246226289293637, guid: 269475d5342b6417ba5121d292b18d76,
         type: 3}
       propertyPath: m_Name
@@ -45817,7 +45828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826518075}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4669234115489698}
@@ -45880,7 +45891,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.24e-43, y: 3.647623, z: 7.24e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -52952,7 +52963,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29504
+  m_Name: pb_Mesh450056
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -66346,6 +66357,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  ray: {fileID: 0}
 --- !u!114 &1622315374
 MonoBehaviour:
   m_ObjectHideFlags: 0
