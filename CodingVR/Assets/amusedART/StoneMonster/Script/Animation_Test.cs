@@ -13,7 +13,7 @@ public class Animation_Test : MonoBehaviour
     private string currentAnim = "";
     public bool isDeath = false;
     public bool isAttack = false;
-    attakcer att;
+    attakcer att = null;
     Animation anim;
     public GameObject dropItem;
 
@@ -27,11 +27,12 @@ public class Animation_Test : MonoBehaviour
 
     private void Update()
     {
-        if (att.canShoot() && isCanAttack() && !isAttack)
-        {
-            isAttack = true;
-            AttackAni();
-        }
+        if (att != null)
+            if (att.canShoot() && isCanAttack() && !isAttack)
+            {
+                isAttack = true;
+                AttackAni();
+            }
         if (!anim.isPlaying)
         {
             if (isDeath)
