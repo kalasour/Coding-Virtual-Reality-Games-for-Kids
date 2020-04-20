@@ -5,6 +5,8 @@ using UnityEngine;
 public class Codable : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public bool isUp = false;
     public bool isForward = false;
     public bool isTurned = false;
     public bool isOpen = false;
@@ -15,13 +17,13 @@ public class Codable : MonoBehaviour
     void Start()
     {
         ray = (GameObject)Resources.Load("CFX3Rays", typeof(GameObject));
-        if (ray != null) {
-            Transform clonned = Instantiate(ray).transform;
-            clonned.parent = transform;
+        if (ray != null)
+        {
+            Transform clonned = Instantiate(ray, transform).transform;
             clonned.localPosition = Vector3.zero;
             ray = clonned.gameObject;
         }
-            
+
 
     }
 
@@ -49,13 +51,15 @@ public class Codable : MonoBehaviour
         if (isForward)
         {
             transform.Translate(transform.forward, Space.World);
-            // if (transform.childCount > 0)
-            // {
-            //     Transform fChild = transform.GetChild(0);
-            //     fChild.Translate(-0.1f, 0, 0);
-            // }
 
             isForward = false;
+        }
+
+        if (isUp)
+        {
+            transform.Translate(transform.up, Space.World);
+
+            isUp = false;
         }
         if (isTurned && canTurn)
         {
@@ -86,6 +90,11 @@ public class Codable : MonoBehaviour
     public void Forward()
     {
         isForward = true;
+    }
+
+    public void Up()
+    {
+        isUp = true;
     }
     public void DoorOpen()
     {
