@@ -17,7 +17,7 @@ public class Codable : MonoBehaviour
     void Start()
     {
         ray = (GameObject)Resources.Load("CFX3Rays", typeof(GameObject));
-        if (ray != null)
+        if (ray != null&&gameObject.GetComponent<ID>().Id!="self")
         {
             Transform clonned = Instantiate(ray, transform).transform;
             clonned.localPosition = Vector3.zero;

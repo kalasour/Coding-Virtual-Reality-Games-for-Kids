@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +12,8 @@ public class newToggle : MonoBehaviour
 
     private AudioSource aSource;
     public bool ActivePanel = false;
+    public GameObject[] CodeContents;
+    public List<Block> AllBlock;
     void Start()
     {
         // Panel=GameObject.FindWithTag ("Panel");
@@ -76,14 +80,22 @@ public class newToggle : MonoBehaviour
 
     public void RunCode()
     {
-        Block[] allChildren = GameObject.FindWithTag("CodeContent").transform.GetComponentsInChildren<Block>();
-        // Code.GetComponent<BeepBlock>().Run();
-        // Debug.Log(Code);
-        foreach (Block child in allChildren)
+        CodeContents = Resources.FindObjectsOfTypeAll<CodeContent>().Select(com => com.gameObject).ToArray<GameObject>();
+        AllBlock.Clear();
+        foreach (GameObject CodeContent in CodeContents)
         {
-            // Debug.Log (child.gameObject);
-            if (child.isStartBlock) child.Run();
+            Block[] allChildren = CodeContent.transform.GetComponentsInChildren<Block>();
+            // Code.GetComponent<BeepBlock>().Run();
+            // Debug.Log(Code);
+
+            foreach (Block child in allChildren)
+            {
+                // Debug.Log (child.gameObject);
+                AllBlock.Add(child);
+                if (child.isStartBlock) child.Run();
+            }
         }
+
     }
 
     public void TaskOnClick()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CodeContentController : MonoBehaviour
@@ -13,7 +14,7 @@ public class CodeContentController : MonoBehaviour
     void Start()
     {
         contents = GameObject.FindGameObjectsWithTag("CodeContent");
-        codables = GameObject.FindGameObjectsWithTag("Codable");
+        codables = GameObject.FindObjectsOfType<Codable>().Select(Codable => Codable.gameObject).ToArray<GameObject>();
     }
 
     // Update is called once per frame
@@ -25,16 +26,18 @@ public class CodeContentController : MonoBehaviour
             string id = codables[i].GetComponent<ID>().Id;
             GameObject content = Array.Find(contents, c => c.GetComponent<ID>().Id == id);
 
-            if (Vector3.Distance(transform.position, codables[i].transform.position) <= 3f)
+            if (Vector3.Distance(transform.position, codables[i].transform.position) <= 3f && codables[i].GetComponent<ID>().Id != "self")
             {
                 codables[i].GetComponent<Codable>().ray.SetActive(false);
-                content.SetActive(true);
+
+                content.GetComponent<CodeContent>().isCurrent = true;
                 isSelf = false;
             }
             else
             {
                 codables[i].GetComponent<Codable>().ray.SetActive(true);
-                content.SetActive(false);
+
+                content.GetComponent<CodeContent>().isCurrent = false;
             }
 
         }
@@ -43,12 +46,15 @@ public class CodeContentController : MonoBehaviour
         {
             GameObject content = Array.Find(contents, c => c.GetComponent<ID>().Id == "self");
 
-            content.SetActive(true);
+
+            content.GetComponent<CodeContent>().isCurrent = true;
         }
         else
         {
             GameObject content = Array.Find(contents, c => c.GetComponent<ID>().Id == "self");
-            content.SetActive(false);
+
+            content.GetComponent<CodeContent>().isCurrent = false;
+            Debug.Log("off");
         }
         isSelf = true;
     }
