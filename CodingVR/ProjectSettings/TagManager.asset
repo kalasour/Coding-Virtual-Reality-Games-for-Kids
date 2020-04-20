@@ -11,6 +11,8 @@ TagManager:
   - Panel
   - Temp
   - Codable
+  - FxTemporaire
+  - canForcefield
   layers:
   - Default
   - TransparentFX
