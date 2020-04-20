@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animation_controller : MonoBehaviour {
+public class Animation_controller : MonoBehaviour
+{
 
     public string IDLE = "idle";
     public string RUN = "panic";
@@ -15,60 +16,75 @@ public class Animation_controller : MonoBehaviour {
     attakcer att;
     Animation anim;
 
-    void Start () {
+    void Start()
+    {
         currentAnim = IDLE;
-        anim = GetComponent<Animation> ();
-        att = GetComponent<attakcer> ();
+        anim = GetComponent<Animation>();
+        att = GetComponent<attakcer>();
 
     }
 
-    private void Update () {
+    private void Update()
+    {
         if (att != null)
-            if (att.canShoot () && isCanAttack () && !isAttack) {
+            if (att.canShoot() && isCanAttack() && !isAttack)
+            {
                 isAttack = true;
-                AttackAni ();
+                AttackAni();
             }
-        if (!anim.isPlaying) {
-            if (isDeath) {
-                Object.Destroy (gameObject, 0.5f);
-            } else if (isAttack) {
-                att.Shoot ();
+        if (!anim.isPlaying)
+        {
+            if (isDeath)
+            {
+                Object.Destroy(gameObject, 0.5f);
+            }
+            else if (isAttack)
+            {
+                // att.Shoot ();
                 isAttack = false;
-            } else {
+            }
+            else
+            {
                 currentAnim = IDLE;
-                anim.Play (IDLE);
+                anim.Play(IDLE);
             }
         }
     }
 
-    public void IdleAni () {
+    public void IdleAni()
+    {
         currentAnim = IDLE;
-        anim.CrossFade (IDLE);
+        anim.CrossFade(IDLE);
     }
 
-    public bool isCanAttack () {
+    public bool isCanAttack()
+    {
         return currentAnim == IDLE || currentAnim == ATTACK || currentAnim == RUN;
     }
 
-    public void RunAni () {
+    public void RunAni()
+    {
         currentAnim = RUN;
-        anim.CrossFade (RUN);
+        anim.CrossFade(RUN);
     }
 
-    public void AttackAni () {
+    public void AttackAni()
+    {
         currentAnim = ATTACK;
-        anim.CrossFade (ATTACK);
+        anim.CrossFade(ATTACK);
     }
 
-    public void DamageAni () {
+    public void DamageAni()
+    {
         currentAnim = DAMAGE;
-        anim.CrossFade (DAMAGE);
+        anim.CrossFade(DAMAGE);
 
     }
 
-    public void DeathAni () {
+    public void DeathAni()
+    {
         currentAnim = DEATH;
-        anim.CrossFade (DEATH);
+        anim.CrossFade(DEATH);
         isDeath = true;
     }
 

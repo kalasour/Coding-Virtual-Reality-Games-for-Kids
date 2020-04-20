@@ -7,16 +7,16 @@ public class Sword : MonoBehaviour
     // Start is called before the first frame update
     public float damage = 10;
     public TextMeshPro Label;
-    Rigidbody rigidbody;
+    Rigidbody rigid;
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-         damage = rigidbody.velocity.magnitude * 3;
+        damage = rigid.velocity.magnitude * 3;
         Label.text = "Damage : " + ((int)damage).ToString();
     }
 }
