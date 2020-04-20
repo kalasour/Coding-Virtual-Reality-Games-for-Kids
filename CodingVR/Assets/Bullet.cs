@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public Transform target = null;
-
+    public bool noTarget = false;
     public float speed = 3;
 
     private void Start()
@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (target == null) return;
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        if (noTarget) transform.Translate(transform.forward * step, Space.World);
+        else transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
 
     /// <summary>

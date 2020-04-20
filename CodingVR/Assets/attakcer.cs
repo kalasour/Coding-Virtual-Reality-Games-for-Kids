@@ -18,12 +18,15 @@ public class attakcer : MonoBehaviour
     public float shotInterval = 0.5f;
     public float distance = 0;
     public float shotTime = 0;
+    public bool noTarget = false;
+
     void Start()
     {
-        if (target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (target == null && !noTarget) target = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Update()
     {
+        if (noTarget && (Time.time - shotTime) > shotInterval) Shoot();
         if (target == null) return;
         distance = Vector3.Distance(target.position, transform.position);
 
@@ -56,7 +59,7 @@ public class attakcer : MonoBehaviour
     {
         //Reset the time when we shoot
         shotTime = Time.time;
-        GameObject clone = Instantiate(projectile, (spawnPoint == null) ? (transform.position + (target.position - transform.position).normalized) : spawnPoint.position, Quaternion.LookRotation(target.position - transform.position));
+        GameObject clone = Instantiate(projectile, (spawnPoint == null) ? (transform.position + (target.position - transform.position).normalized) : spawnPoint.position, noTarget ? transform.rotation : Quaternion.LookRotation((spawnPoint == null ? target.position : spawnPoint.position) - transform.position));
         clone.GetComponent<Bullet>().enabled = true;
         clone.transform.parent = GameObject.Find("ENVIRO_INTERACTABLE").transform;
         if (speed != 0) clone.GetComponent<Bullet>().speed = speed;
