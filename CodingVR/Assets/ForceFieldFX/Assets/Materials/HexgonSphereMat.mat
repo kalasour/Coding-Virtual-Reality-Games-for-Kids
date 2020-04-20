@@ -63,13 +63,13 @@ Material:
     - _CullOff: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distort: 26.8
+    - _Distort: 25.8
     - _DstBlend: 0
     - _Float1: 2
     - _Float2: 3
     - _Fresnel: 200
     - _FresnelIntensity: 61
-    - _FresnelWidth: 0.71
+    - _FresnelWidth: 0.77
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -86,8 +86,8 @@ Material:
     - _RimPower: 51
     - _RimWidth: 0.82
     - _ScrollSpeed: 2
-    - _ScrollSpeedU: 0.57
-    - _ScrollSpeedV: 4.19
+    - _ScrollSpeedU: 3.74
+    - _ScrollSpeedV: 8.18
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
