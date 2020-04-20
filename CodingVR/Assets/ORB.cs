@@ -34,4 +34,16 @@ public class ORB : MonoBehaviour
         if (forceField != null)
             Destroy(forceField);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Bullet>() != null)
+            gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Bullet>() != null)
+            gameObject.SetActive(false);
+    }
 }

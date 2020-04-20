@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -460,7 +462,13 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         //if (!aSource.isPlaying) {
         //	aSource.Play ();
         //}
+        GameObject[] AllC = GameObject.FindGameObjectsWithTag("CodeContent");
         GameObject codeContentGO = GameObject.FindWithTag("CodeContent");
+        foreach (GameObject c in AllC) {
+            if (c.GetComponent<CodeContent>().isCurrent) {
+                codeContentGO = c;
+            }
+        }
         // if (transform.parent.gameObject.Equals (codeContentGO) == false) {
         RectTransform rect = codeContentGO.GetComponent<RectTransform>();
         Vector2 mousePos = new Vector2(uiHelperPos.position.x, uiHelperPos.position.y);
