@@ -5,15 +5,15 @@ using UnityEngine;
 public class ID : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string Id;
+    public string Id = "";
     void Start()
     {
-        
+        if (Id == "") Id = gameObject.name;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

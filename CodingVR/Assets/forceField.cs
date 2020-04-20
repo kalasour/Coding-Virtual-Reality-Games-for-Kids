@@ -23,8 +23,10 @@ public class forceField : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "canForcefield")
+        if (!other.gameObject.CompareTag("canForcefield"))
+        {
             Destroy(other.gameObject);
+        }
 
     }
 }

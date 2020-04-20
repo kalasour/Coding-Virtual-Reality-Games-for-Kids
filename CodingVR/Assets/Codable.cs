@@ -7,17 +7,19 @@ public class Codable : MonoBehaviour
     // Start is called before the first frame update
 
     public bool isUp = false;
+    public bool isJump = false;
     public bool isForward = false;
     public bool isTurned = false;
     public bool isOpen = false;
     private bool turning = false;
     private bool canTurn = true;
+    public float jumpForce = 2.0f;
     int count = 0;
     public GameObject ray = null;
     void Start()
     {
         ray = (GameObject)Resources.Load("CFX3Rays", typeof(GameObject));
-        if (ray != null&&gameObject.GetComponent<ID>().Id!="self")
+        if (ray != null && gameObject.GetComponent<ID>().Id != "self")
         {
             Transform clonned = Instantiate(ray, transform).transform;
             clonned.localPosition = Vector3.zero;
@@ -61,6 +63,17 @@ public class Codable : MonoBehaviour
 
             isUp = false;
         }
+        if (isJump)
+        {
+            Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
+
+            if (rigidbody != null)
+            {
+                rigidbody.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce, ForceMode.Impulse);
+            }
+
+            isJump = false;
+        }
         if (isTurned && canTurn)
         {
             canTurn = false;
@@ -95,6 +108,10 @@ public class Codable : MonoBehaviour
     public void Up()
     {
         isUp = true;
+    }
+    public void Jump()
+    {
+        isJump = true;
     }
     public void DoorOpen()
     {

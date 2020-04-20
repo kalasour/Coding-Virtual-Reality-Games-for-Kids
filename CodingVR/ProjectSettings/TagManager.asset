@@ -13,6 +13,8 @@ TagManager:
   - Codable
   - FxTemporaire
   - canForcefield
+  - Monster
+  - PauseRoom
   layers:
   - Default
   - TransparentFX
