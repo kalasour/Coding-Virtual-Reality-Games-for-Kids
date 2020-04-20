@@ -79054,6 +79054,7 @@ GameObject:
   - component: {fileID: 198681264470032530}
   - component: {fileID: 199223780631540688}
   - component: {fileID: 114551767184087894}
+  - component: {fileID: -3081556912836874873}
   m_Layer: 0
   m_Name: CFX2_WWExplosion_C
   m_TagString: Untagged
@@ -83725,6 +83726,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &-3081556912836874873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965343156803978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb1ec971c64f4619981a33a127ceff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: ice_blast
+  volume: 0.8
+  maxDistance: 100
+  loop: 0
 --- !u!1 &1972699721817900
 GameObject:
   m_ObjectHideFlags: 0

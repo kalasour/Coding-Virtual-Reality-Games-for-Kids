@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Transform target;
+    public Transform target = null;
+
     public float speed = 3;
+
     private void Start()
     {
+
         if (target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
         Destroy(gameObject, 5f);
     }
-    void Update()
+    void FixedUpdate()
     {
+        if (target == null) return;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
@@ -23,7 +27,8 @@ public class Bullet : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (!other.CompareTag("Monster"))
+            Destroy(gameObject);
     }
     /// <summary>
     /// OnCollisionEnter is called when this collider/rigidbody has begun
@@ -32,6 +37,7 @@ public class Bullet : MonoBehaviour
     /// <param name="other">The Collision data associated with this collision.</param>
     void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject);
+        if (!other.gameObject.CompareTag("Monster"))
+            Destroy(gameObject);
     }
 }

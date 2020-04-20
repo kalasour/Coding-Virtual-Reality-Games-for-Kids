@@ -24,6 +24,7 @@ public class attakcer : MonoBehaviour
     }
     void Update()
     {
+        if (target == null) return;
         distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= maximumLookDistance)
@@ -57,6 +58,7 @@ public class attakcer : MonoBehaviour
         shotTime = Time.time;
         GameObject clone = Instantiate(projectile, (spawnPoint == null) ? (transform.position + (target.position - transform.position).normalized) : spawnPoint.position, Quaternion.LookRotation(target.position - transform.position));
         clone.GetComponent<Bullet>().enabled = true;
+        clone.transform.parent = GameObject.Find("ENVIRO_INTERACTABLE").transform;
         if (speed != 0) clone.GetComponent<Bullet>().speed = speed;
         clone.transform.localScale *= 3;
 

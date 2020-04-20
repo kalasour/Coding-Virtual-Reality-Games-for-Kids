@@ -76,6 +76,8 @@ public class Animation_controller : MonoBehaviour
 
     public void DamageAni()
     {
+        if (isDeath) return;
+        anim.Stop();
         currentAnim = DAMAGE;
         anim.CrossFade(DAMAGE);
 

@@ -20,11 +20,6 @@ public class ORB : MonoBehaviour
     /// <summary>
     /// This function is called when the behaviour becomes disabled or inactive.
     /// </summary>
-    void OnDisable()
-    {
-        if (forceField != null)
-            Destroy(forceField);
-    }
 
     /// <summary>
     /// This function is called when the MonoBehaviour will be destroyed.

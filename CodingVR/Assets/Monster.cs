@@ -23,14 +23,22 @@ public class Monster : MonoBehaviour
             HP.SetText("");
             Anim.DeathAni();
         }
-        else {
+        else if (hp > 0)
+        {
             HP.SetText((int)hp + "%");
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "sword" && Anim.isCanAttack()) {
+        if (collision.gameObject.name == "sword" && Anim.isCanAttack())
+        {
+            float damage = collision.gameObject.GetComponent<Sword>().damage;
+            hp -= damage;
+            Anim.DamageAni();
+        }
+        else if (collision.gameObject.GetComponent<Bullet>() != null)
+        {
             float damage = collision.gameObject.GetComponent<Sword>().damage;
             hp -= damage;
             Anim.DamageAni();
