@@ -13,7 +13,7 @@ public class Codable : MonoBehaviour
     public bool isOpen = false;
     private bool turning = false;
     private bool canTurn = true;
-    Rigidbody rb = null;
+    public Rigidbody rb = null;
     public float jumpForce = 2.0f;
     int count = 0;
     public GameObject ray = null;
@@ -73,7 +73,9 @@ public class Codable : MonoBehaviour
 
             if (rb != null)
             {
-                rb.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce, ForceMode.Impulse);
+                Debug.Log("Jump");
+                 rb.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce);
+                //rb.velocity = new Vector3(0.0f, 2.0f, 0.0f) * jumpForce;
             }
 
             isJump = false;

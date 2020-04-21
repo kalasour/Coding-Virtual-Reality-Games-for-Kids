@@ -15,6 +15,7 @@ TagManager:
   - canForcefield
   - Monster
   - PauseRoom
+  - Robot
   layers:
   - Default
   - TransparentFX
