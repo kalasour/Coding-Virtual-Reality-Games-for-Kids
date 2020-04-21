@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public string tag = "Monster";
     public Transform target = null;
     public bool noTarget = false;
     public float speed = 3;
@@ -27,7 +28,7 @@ public class Bullet : MonoBehaviour
     /// <param name="other">The other Collider involved in this collision.</param>
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Monster"))
+        if (!other.CompareTag(tag))
             Destroy(gameObject);
     }
     /// <summary>
@@ -37,7 +38,7 @@ public class Bullet : MonoBehaviour
     /// <param name="other">The Collision data associated with this collision.</param>
     void OnCollisionEnter(Collision other)
     {
-        if (!other.gameObject.CompareTag("Monster"))
+        if (!other.gameObject.CompareTag(tag))
             Destroy(gameObject);
     }
 }

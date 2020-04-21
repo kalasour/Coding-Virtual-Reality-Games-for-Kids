@@ -13,11 +13,14 @@ public class Codable : MonoBehaviour
     public bool isOpen = false;
     private bool turning = false;
     private bool canTurn = true;
+    public Rigidbody rb = null;
     public float jumpForce = 2.0f;
     int count = 0;
     public GameObject ray = null;
+    public GameObject bat = null;
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         ray = (GameObject)Resources.Load("CFX3Rays", typeof(GameObject));
         if (ray != null && gameObject.GetComponent<ID>().Id != "self")
         {
@@ -48,6 +51,7 @@ public class Codable : MonoBehaviour
                 }
             }
             if (Door != null) Door.GetComponent<SceneControllerScript>().doorToggle = true;
+            if (bat != null) bat.SetActive(true);
             isOpen = false;
         }
         if (isForward)
@@ -65,11 +69,13 @@ public class Codable : MonoBehaviour
         }
         if (isJump)
         {
-            Rigidbody rigidbody = gameObject.GetComponent<Rigidbody>();
 
-            if (rigidbody != null)
+
+            if (rb != null)
             {
-                rigidbody.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce, ForceMode.Impulse);
+                Debug.Log("Jump");
+                 rb.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce);
+                //rb.velocity = new Vector3(0.0f, 2.0f, 0.0f) * jumpForce;
             }
 
             isJump = false;

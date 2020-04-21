@@ -6,7 +6,7 @@ using TMPro;
 public class MonsterController : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float hp = 100;
+    public float hp = 100;
     public Animation_controller Anim;
     public TextMeshPro HP;
     void Start()

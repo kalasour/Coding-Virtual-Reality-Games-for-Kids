@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.19613683, g: 0.556998, b: 0.9434184, a: 1}
+  m_IndirectSpecularColor: {r: 0.19610982, g: 0.5570793, b: 0.9439225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -965,6 +965,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 68326663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &75931143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75931144}
+  - component: {fileID: 75931146}
+  - component: {fileID: 75931145}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &75931144
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75931143}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1097140111}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &75931145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75931143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Restart
+
+'
+--- !u!222 &75931146
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75931143}
+  m_CullTransparentMesh: 0
 --- !u!1001 &76888650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1106,6 +1185,7 @@ GameObject:
   - component: {fileID: 91374837}
   - component: {fileID: 91374839}
   - component: {fileID: 91374838}
+  - component: {fileID: 91374840}
   m_Layer: 0
   m_Name: 'GreenToggleArea '
   m_TagString: Untagged
@@ -1159,6 +1239,20 @@ MonoBehaviour:
   targetText: {fileID: 1146129384}
   booString: isOnArea
   state: 0
+--- !u!114 &91374840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91374836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7e4a35ae4f2d146baef8f1602af727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This area toggle the 'isOnArea' variable.
+  room: {fileID: 0}
 --- !u!1001 &93391684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16569,14 +16663,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185223322}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -71, y: -0.48, z: 30.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 814497849}
   m_Father: {fileID: 1511062115}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &185223324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16629,10 +16723,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUp: 0
+  isJump: 0
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
+  jumpForce: 2
   ray: {fileID: 0}
+  bat: {fileID: 0}
 --- !u!23 &185223328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18458,8 +18556,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346267243}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0.0017688572, y: -12.098106, z: 9.593435}
+  m_LocalRotation: {x: 0.1539127, y: 0.5025363, z: 0.09144634, w: -0.8458166}
+  m_LocalPosition: {x: -75.85093, y: -11.216761, z: 24.81099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18701,6 +18799,7 @@ GameObject:
   - component: {fileID: 388932857}
   - component: {fileID: 388932856}
   - component: {fileID: 388932858}
+  - component: {fileID: 388932859}
   m_Layer: 0
   m_Name: ToggleArea (1)
   m_TagString: Untagged
@@ -18770,6 +18869,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &388932859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388932854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7e4a35ae4f2d146baef8f1602af727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This area toggle the 'isOnArea' variable.
+  room: {fileID: 0}
 --- !u!1001 &394254465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24412,6 +24525,7 @@ GameObject:
   - component: {fileID: 493185131}
   - component: {fileID: 493185130}
   - component: {fileID: 493185136}
+  - component: {fileID: 493185137}
   m_Layer: 0
   m_Name: Yarn
   m_TagString: Temp
@@ -24426,14 +24540,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493185128}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -88.5, y: -4.87, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1812618554}
   m_Father: {fileID: 1511062115}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &493185130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24486,10 +24600,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUp: 0
+  isJump: 0
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
+  jumpForce: 2
   ray: {fileID: 0}
+  bat: {fileID: 0}
 --- !u!23 &493185134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24550,6 +24668,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: Yarn
+--- !u!114 &493185137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493185128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5791777ad25c50c44a0b31723cedc05f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &493308375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25224,6 +25354,181 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4532669189105954, guid: 8e25ddc474b583d42a7e7f70735a3e75,
     type: 3}
   m_PrefabInstance: {fileID: 568177913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &580166807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1860567006}
+    m_Modifications:
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 96.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669474, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_Name
+      value: ROOM
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695293340608, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695293340608, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695293340608, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695293340608, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695293340608, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695598484633, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695598484633, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695598484633, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695598484633, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695598484633, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696301050942, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696301050942, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696301050942, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696301050942, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696301050942, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 187272cef1a577c46b418325d38e894f, type: 3}
+--- !u!4 &580166808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
+    type: 3}
+  m_PrefabInstance: {fileID: 580166807}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &604337759
 PrefabInstance:
@@ -40776,6 +41081,7 @@ GameObject:
   - component: {fileID: 764477177}
   - component: {fileID: 764477179}
   - component: {fileID: 764477178}
+  - component: {fileID: 764477180}
   m_Layer: 0
   m_Name: 'YellowToggleArea '
   m_TagString: Untagged
@@ -40829,6 +41135,20 @@ MonoBehaviour:
   targetText: {fileID: 1146129384}
   booString: isOnArea
   state: 0
+--- !u!114 &764477180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764477176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7e4a35ae4f2d146baef8f1602af727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This area toggle the 'isOnArea' variable.
+  room: {fileID: 0}
 --- !u!1001 &773587526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41251,13 +41571,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814497848}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0.137, z: 0}
   m_LocalScale: {x: 0.34, y: 0.34, z: 1}
   m_Children: []
   m_Father: {fileID: 185223323}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!212 &814497850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57555,6 +57875,124 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1097140110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097140111}
+  - component: {fileID: 1097140114}
+  - component: {fileID: 1097140113}
+  - component: {fileID: 1097140112}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1097140111
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097140110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 75931144}
+  m_Father: {fileID: 1578733599}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 8.02, y: 2.86}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1097140112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097140110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1097140113}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1097140113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097140110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1097140114
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097140110}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1100316254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58498,7 +58936,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh68262
+  m_Name: pb_Mesh152332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -79397,6 +79835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511062115}
+  - component: {fileID: 1511062116}
   m_Layer: 0
   m_Name: ENVIRO_INTERACTABLE
   m_TagString: Untagged
@@ -79429,6 +79868,22 @@ Transform:
   m_Father: {fileID: 1860567006}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511062116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511062114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb1ec971c64f4619981a33a127ceff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 2
+  volume: 0.8
+  maxDistance: 1000
+  loop: 1
 --- !u!1 &1526980365
 GameObject:
   m_ObjectHideFlags: 0
@@ -80060,6 +80515,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4978993132652972, guid: 510a55b5c4aed6945a274d56d5790da3,
     type: 3}
   m_PrefabInstance: {fileID: 1566851382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1578733599 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5709430695964260428, guid: 187272cef1a577c46b418325d38e894f,
+    type: 3}
+  m_PrefabInstance: {fileID: 580166807}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1586426168 stripped
 MonoBehaviour:
@@ -86070,6 +86531,7 @@ GameObject:
   - component: {fileID: 1775891955}
   - component: {fileID: 1775891957}
   - component: {fileID: 1775891956}
+  - component: {fileID: 1775891958}
   m_Layer: 0
   m_Name: BlueToggleArea
   m_TagString: Untagged
@@ -86123,6 +86585,20 @@ MonoBehaviour:
   targetText: {fileID: 1146129384}
   booString: isOnArea
   state: 0
+--- !u!114 &1775891958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775891954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7e4a35ae4f2d146baef8f1602af727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This area toggle the 'isOnArea' variable.
+  room: {fileID: 0}
 --- !u!1 &1795289573
 GameObject:
   m_ObjectHideFlags: 0
@@ -86199,13 +86675,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812618553}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0.137, z: 0}
   m_LocalScale: {x: 0.34, y: 0.34, z: 1}
   m_Children: []
   m_Father: {fileID: 493185129}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!212 &1812618555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86560,6 +87036,7 @@ Transform:
   - {fileID: 1132237009}
   - {fileID: 1669752541}
   - {fileID: 1297733567}
+  - {fileID: 580166808}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112274,6 +112751,34 @@ MonoBehaviour:
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
   _headPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
   profilerTcpPort: 32419
+  expandMixedRealityCapturePropertySheet: 0
+  enableMixedReality: 0
+  compositionMethod: 0
+  extraHiddenLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  externalCompositionBackdropColorRift: {r: 0, g: 1, b: 0, a: 1}
+  externalCompositionBackdropColorQuest: {r: 0, g: 0, b: 0, a: 0}
+  capturingCameraDevice: 0
+  flipCameraFrameHorizontally: 0
+  flipCameraFrameVertically: 0
+  handPoseStateLatency: 0
+  sandwichCompositionRenderLatency: 0
+  sandwichCompositionBufferedFrames: 8
+  chromaKeyColor: {r: 0, g: 1, b: 0, a: 1}
+  chromaKeySimilarity: 0.6
+  chromaKeySmoothRange: 0.03
+  chromaKeySpillRange: 0.06
+  useDynamicLighting: 0
+  depthQuality: 1
+  dynamicLightingSmoothFactor: 8
+  dynamicLightingDepthVariationClampingValue: 0.001
+  virtualGreenScreenType: 0
+  virtualGreenScreenTopY: 10
+  virtualGreenScreenBottomY: -10
+  virtualGreenScreenApplyDepthCulling: 0
+  virtualGreenScreenDepthTolerance: 0.2
+  mrcActivationMode: 0
   _trackingOriginType: 0
   usePositionTracking: 1
   useRotationTracking: 1
@@ -117359,6 +117864,7 @@ GameObject:
   - component: {fileID: 2094509082}
   - component: {fileID: 2094509083}
   - component: {fileID: 2094509084}
+  - component: {fileID: 2094509085}
   m_Layer: 0
   m_Name: RedToggleArea
   m_TagString: Untagged
@@ -117412,6 +117918,20 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2094509085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094509081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7e4a35ae4f2d146baef8f1602af727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: This area toggle the 'isOnArea' variable.
+  room: {fileID: 0}
 --- !u!1 &2096480871
 GameObject:
   m_ObjectHideFlags: 0
@@ -122867,6 +123387,7 @@ MonoBehaviour:
   shotInterval: 0.5
   distance: 0
   shotTime: 0
+  noTarget: 0
 --- !u!1 &1399652523787828
 GameObject:
   m_ObjectHideFlags: 0
@@ -123125,6 +123646,7 @@ MonoBehaviour:
   shotInterval: 0.5
   distance: 0
   shotTime: 0
+  noTarget: 0
 --- !u!1 &1753160458481803
 GameObject:
   m_ObjectHideFlags: 0
@@ -155299,7 +155821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb6d29b21c745c458d51f4da2b1c27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Monster
   target: {fileID: 0}
+  noTarget: 0
   speed: 3
 --- !u!1 &7449170444198298876
 GameObject:
