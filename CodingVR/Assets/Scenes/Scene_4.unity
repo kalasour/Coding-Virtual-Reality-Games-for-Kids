@@ -3494,6 +3494,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
   jumpForce: 2
   ray: {fileID: 0}
   bat: {fileID: 0}
@@ -5205,6 +5206,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
   jumpForce: 2
   ray: {fileID: 0}
   bat: {fileID: 0}
@@ -12395,6 +12397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826df5373342348c9947aa17d577f5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 100
   Anim: {fileID: 0}
   HP: {fileID: 498623225}
 --- !u!136 &603190812524261246
@@ -12803,6 +12806,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1015464850746713725}
     m_Modifications:
+    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
+      propertyPath: m_Name
+      value: Mounting_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4619486662236612, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.263844
@@ -12859,14 +12870,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 6.1913414
       objectReference: {fileID: 0}
-    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
-      propertyPath: m_Name
-      value: Mounting_1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 23323909495853514, guid: e05ee61d6dad0e54eb51d1c8ec3becc6,
         type: 3}
       propertyPath: m_LightmapParameters
@@ -12892,6 +12895,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1015464850746713725}
     m_Modifications:
+    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
+      propertyPath: m_Name
+      value: Mounting_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4619486662236612, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.236156
@@ -12947,14 +12958,6 @@ PrefabInstance:
     - target: {fileID: 4619486662236612, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
       propertyPath: m_LocalScale.z
       value: 4.718091
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
-      propertyPath: m_Name
-      value: Mounting_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856861724390114, guid: e05ee61d6dad0e54eb51d1c8ec3becc6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 23323909495853514, guid: e05ee61d6dad0e54eb51d1c8ec3becc6,
         type: 3}
@@ -13105,6 +13108,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
   jumpForce: 2
   ray: {fileID: 0}
   bat: {fileID: 0}
@@ -17966,6 +17970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb6d29b21c745c458d51f4da2b1c27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Monster
   target: {fileID: 0}
   noTarget: 0
   speed: 3
@@ -18068,6 +18073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb6d29b21c745c458d51f4da2b1c27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Monster
   target: {fileID: 2421844497123332447}
   noTarget: 0
   speed: 30
@@ -51868,11 +51874,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1860567006}
     m_Modifications:
-    - target: {fileID: 5709430695417669474, guid: 187272cef1a577c46b418325d38e894f,
-        type: 3}
-      propertyPath: m_Name
-      value: ROOM
-      objectReference: {fileID: 0}
     - target: {fileID: 5709430695417669475, guid: 187272cef1a577c46b418325d38e894f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51927,6 +51928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430695417669474, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_Name
+      value: ROOM
       objectReference: {fileID: 0}
     - target: {fileID: 5709430695251963979, guid: 187272cef1a577c46b418325d38e894f,
         type: 3}
