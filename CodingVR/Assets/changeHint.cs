@@ -29,9 +29,7 @@ public class changeHint : MonoBehaviour
             if (left != null)
             {
                 GameObject tmo = left.transform.GetChild(0).transform.GetChild(0).gameObject;
-                TextMeshPro tm = tmo.GetComponent<TextMeshPro>();
-                Debug.Log(tmo.name);
-                Debug.Log(tm.text);
+                TextMeshProUGUI tm = tmo.GetComponent<TextMeshProUGUI>();
                 tm.SetText(message);
                 tm.color = Color.black;
             }
