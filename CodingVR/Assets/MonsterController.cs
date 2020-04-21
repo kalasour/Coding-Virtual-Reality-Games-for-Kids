@@ -39,6 +39,7 @@ public class MonsterController : MonoBehaviour
         }
         else if (collision.gameObject.GetComponent<Bullet>() != null)
         {
+            if (collision.gameObject.GetComponent<Bullet>().Tag == gameObject.tag) return;
             float damage = 10;
             hp -= damage;
             Anim.DamageAni();
@@ -59,6 +60,7 @@ public class MonsterController : MonoBehaviour
         }
         else if (collision.gameObject.GetComponent<Bullet>() != null)
         {
+            if (collision.gameObject.GetComponent<Bullet>().Tag == gameObject.tag) return;
             float damage = 10;
             hp -= damage;
             Anim.DamageAni();

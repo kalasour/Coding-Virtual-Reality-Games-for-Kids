@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.029852886, g: 0.020129595, b: 0.13543344, a: 1}
+  m_IndirectSpecularColor: {r: 0.044731103, g: 0.020472568, b: 0.14643966, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26571,8 +26571,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282282818}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -77.04, y: -11.05, z: 1.20755}
+  m_LocalRotation: {x: 0.15572947, y: 0.7612326, z: 0.19843413, w: -0.5974087}
+  m_LocalPosition: {x: 308.8341, y: -189.64706, z: 201.0025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -33427,6 +33427,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
   jumpForce: 2
   ray: {fileID: 0}
   bat: {fileID: 0}
@@ -65639,31 +65640,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5709430695293340608, guid: 187272cef1a577c46b418325d38e894f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -65710,6 +65686,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5709430695598484633, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709430696097820106, guid: 187272cef1a577c46b418325d38e894f,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
@@ -66246,6 +66247,7 @@ MonoBehaviour:
   isForward: 0
   isTurned: 0
   isOpen: 0
+  rb: {fileID: 0}
   jumpForce: 2
   ray: {fileID: 0}
   bat: {fileID: 1804211982}
@@ -72254,6 +72256,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 912769657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1804211983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804211982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb1ec971c64f4619981a33a127ceff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: bat
+  volume: 1
+  maxDistance: 100
+  loop: 0
 --- !u!4 &1806520999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4084527928584542, guid: d5f13229abd060d4e82aafd4843a0bef,
@@ -98468,34 +98486,6 @@ MonoBehaviour:
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
   _headPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
   profilerTcpPort: 32419
-  expandMixedRealityCapturePropertySheet: 0
-  enableMixedReality: 0
-  compositionMethod: 0
-  extraHiddenLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  externalCompositionBackdropColorRift: {r: 0, g: 1, b: 0, a: 1}
-  externalCompositionBackdropColorQuest: {r: 0, g: 0, b: 0, a: 0}
-  capturingCameraDevice: 0
-  flipCameraFrameHorizontally: 0
-  flipCameraFrameVertically: 0
-  handPoseStateLatency: 0
-  sandwichCompositionRenderLatency: 0
-  sandwichCompositionBufferedFrames: 8
-  chromaKeyColor: {r: 0, g: 1, b: 0, a: 1}
-  chromaKeySimilarity: 0.6
-  chromaKeySmoothRange: 0.03
-  chromaKeySpillRange: 0.06
-  useDynamicLighting: 0
-  depthQuality: 1
-  dynamicLightingSmoothFactor: 8
-  dynamicLightingDepthVariationClampingValue: 0.001
-  virtualGreenScreenType: 0
-  virtualGreenScreenTopY: 10
-  virtualGreenScreenBottomY: -10
-  virtualGreenScreenApplyDepthCulling: 0
-  virtualGreenScreenDepthTolerance: 0.2
-  mrcActivationMode: 0
   _trackingOriginType: 0
   usePositionTracking: 1
   useRotationTracking: 1

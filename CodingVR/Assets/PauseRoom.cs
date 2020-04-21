@@ -11,6 +11,7 @@ public class PauseRoom : MonoBehaviour
     public bool isPause = false;
     public GameObject ENVI = null;
     public GameObject LeftCanvas = null;
+    public GameObject RightCanvas = null;
     bool canPress = true;
     void Start()
     {
@@ -25,6 +26,7 @@ public class PauseRoom : MonoBehaviour
             }
         }
         LeftCanvas = GameObject.Find("LeftCanvas");
+        RightCanvas = GameObject.Find("RightCanvas");
 
 
     }

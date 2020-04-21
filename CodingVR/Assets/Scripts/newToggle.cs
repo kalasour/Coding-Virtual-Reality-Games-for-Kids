@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class newToggle : MonoBehaviour
 {
@@ -97,7 +99,6 @@ public class newToggle : MonoBehaviour
         }
 
     }
-
     public void TaskOnClick()
     {
         //Output this to console when Button1 or Button3 is clicked
