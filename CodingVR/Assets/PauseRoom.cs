@@ -10,6 +10,7 @@ public class PauseRoom : MonoBehaviour
     public Transform Center = null;
     public bool isPause = false;
     public GameObject ENVI = null;
+    public GameObject LeftCanvas = null;
     bool canPress = true;
     void Start()
     {
@@ -23,6 +24,9 @@ public class PauseRoom : MonoBehaviour
                 Center = transform.GetChild(i).transform;
             }
         }
+        LeftCanvas = GameObject.Find("LeftCanvas");
+
+
     }
 
     // Update is called once per frame
