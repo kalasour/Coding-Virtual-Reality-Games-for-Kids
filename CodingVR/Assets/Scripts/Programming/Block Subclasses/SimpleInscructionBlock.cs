@@ -10,8 +10,8 @@ public class SimpleInscructionBlock : Block {
 
 	override protected void CreateConnections () {
 		this.blockType = BlockType.BlockTypeInscrution;
-		Connection previousConnection = new Connection (this, new Vector3 (15, 90,0), Connection.ConnectionType.Previous);
-		Connection nextConnection = new Connection (this, new Vector3 (15, 0,0), Connection.ConnectionType.Next);
+		Connection previousConnection = new Connection (this, new Vector3 (-34.6f, 13.6f), Connection.ConnectionType.Previous);
+		Connection nextConnection = new Connection (this, new Vector3 (-34.6f, -15.8f), Connection.ConnectionType.Next);
 
 		previousConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);
 		nextConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);

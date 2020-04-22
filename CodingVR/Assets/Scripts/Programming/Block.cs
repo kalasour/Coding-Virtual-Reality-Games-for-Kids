@@ -12,6 +12,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     float upper, under;
     public GameObject[] canvass;
     public GameObject can = null;
+
     public class Connection
     {
         public const float kMinimumAttachRadius = 0.008f;
@@ -19,12 +20,20 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         public Block ownerBlock;
         public ConnectionType connectionType;
         public Vector3 relativePosition;
+        public Transform relativeTransform;
+        public GameObject relativeObject;
         public Block connectedBlock;
         public BlockType acceptableBlockType;
         public Connection(Block ownerBlock, Vector3 relativePosition, ConnectionType connectionType)
         {
             this.ownerBlock = ownerBlock;
             this.relativePosition = relativePosition;
+            relativeObject = new GameObject(connectionType.ToString());
+
+            relativeTransform = relativeObject.transform;
+            relativeTransform.SetParent(ownerBlock.transform);
+            relativeTransform.localPosition = relativePosition;
+            relativeTransform.localScale =new Vector3(1, 1, 1);
             this.connectionType = connectionType;
         }
         public float getkMinimumAttachRadius()
@@ -81,21 +90,15 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             }
             if (this.connectionType == ConnectionType.Next)
             {
-                this.ownerBlock.under = (new Vector3(this.ownerBlock.transform.position.x, this.ownerBlock.transform.position.y) +
-                    new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x,
-                        ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1)).y;
+                this.ownerBlock.under = this.relativeTransform.localPosition.y;
             }
             if (this.connectionType == ConnectionType.Previous)
             {
-                this.ownerBlock.upper = (new Vector3(this.ownerBlock.transform.position.x, this.ownerBlock.transform.position.y) +
-                    new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x,
-                        ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1)).y;
+                this.ownerBlock.upper = this.relativeTransform.localPosition.y;
             }
 
 
-            return new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x + this.ownerBlock.transform.position.x,
-                      ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1 + this.ownerBlock.transform.position.y,
-                      this.ownerBlock.transform.position.z);
+            return this.relativeTransform.position;
 
         }
         float DistanceTo(Connection connection)

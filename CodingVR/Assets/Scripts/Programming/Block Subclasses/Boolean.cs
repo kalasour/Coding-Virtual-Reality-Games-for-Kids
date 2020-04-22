@@ -30,7 +30,7 @@ public class Boolean : Block
     {
         // var = childText.text;
         this.blockType = BlockType.BlockTypeLogic;
-        Connection previousConnection = new Connection(this, new Vector2(50, 50), Connection.ConnectionType.Previous);
+        Connection previousConnection = new Connection(this, new Vector2(0, 0), Connection.ConnectionType.Previous);
 
         previousConnection.SetAcceptableBlockType(BlockType.BlockTypeInscrution | BlockType.BlockTypeConditionJoint);
 

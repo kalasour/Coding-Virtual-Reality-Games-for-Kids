@@ -9015,6 +9015,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -57548,6 +57550,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -58021,6 +58025,8 @@ MonoBehaviour:
   Bot: {fileID: 6707578651417796537}
   Bott: {fileID: 6707578651417796538}
   Leftt: {fileID: 6707578650568868814}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -58244,6 +58250,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -58922,6 +58930,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -59378,6 +59388,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -59546,6 +59558,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -59878,6 +59892,7 @@ GameObject:
   - component: {fileID: 6707578651366295683}
   - component: {fileID: 6707578651366295684}
   - component: {fileID: 6707578651366295685}
+  - component: {fileID: 6707578651366295688}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -59974,6 +59989,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &6707578651366295688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707578651366295682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef8734b1d13ec7418c8fcda2b98c215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 
 --- !u!224 &6707578651399033744
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60622,6 +60650,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -60779,6 +60809,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -61014,6 +61046,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -61090,6 +61124,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -62110,6 +62146,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -62325,6 +62363,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -62576,6 +62616,8 @@ MonoBehaviour:
   Bot: {fileID: 6707578650371441036}
   Bott: {fileID: 6707578650371441037}
   Leftt: {fileID: 6707578651770860635}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -62745,6 +62787,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}
@@ -62908,6 +62952,8 @@ MonoBehaviour:
   Bot: {fileID: 0}
   Bott: {fileID: 0}
   Leftt: {fileID: 0}
+  canvass: []
+  can: {fileID: 0}
   connectedBlock: {fileID: 0}
   If: {fileID: 0}
   Inside1: {fileID: 0}

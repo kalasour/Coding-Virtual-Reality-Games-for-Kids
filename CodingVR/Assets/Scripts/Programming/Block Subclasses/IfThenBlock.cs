@@ -14,10 +14,10 @@ public class IfThenBlock : Block {
 	}
 	override protected void CreateConnections () {
 		this.blockType = BlockType.BlockTypeInscrution;
-		Connection previousConnection = new Connection (this, new Vector2 (10, 90), Connection.ConnectionType.Previous);
-		Connection nextConnection = new Connection (this, new Vector2 (7, 0), Connection.ConnectionType.Next);
-		Connection thenConnection = new Connection (this, new Vector2 (30, 55), Connection.ConnectionType.Inside1);
-		Connection conditionConnection = new Connection (this, new Vector2 (66, 83), Connection.ConnectionType.If);
+		Connection previousConnection = new Connection (this, new Vector2 (-56, 32), Connection.ConnectionType.Previous);
+		Connection nextConnection = new Connection (this, new Vector2 (-56, -33.7f), Connection.ConnectionType.Next);
+		Connection thenConnection = new Connection (this, new Vector2 (-26.61f, -1.1f), Connection.ConnectionType.Inside1);
+		Connection conditionConnection = new Connection (this, new Vector2 (20.5f, 19.7f), Connection.ConnectionType.If);
 
 		previousConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);
 		nextConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);

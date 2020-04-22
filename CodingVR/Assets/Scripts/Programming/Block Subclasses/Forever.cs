@@ -35,12 +35,11 @@ public class Forever : Block {
 	override protected void CreateConnections () {
 		isForeverBlock=true;
 		this.blockType = BlockType.BlockTypeInscrution;
-		Connection previousConnection = new Connection (this, new Vector2 (10, 90), Connection.ConnectionType.Previous);
-		Connection nextConnection = new Connection (this, new Vector2 (10, 0), Connection.ConnectionType.Next);
-		Connection thenConnection = new Connection (this, new Vector2 (28, 55), Connection.ConnectionType.Inside1);
-		// Connection conditionConnection = new Connection (this, new Vector2 (35, 75), Connection.ConnectionType.If);
+        Connection previousConnection = new Connection(this, new Vector2(-56, 32), Connection.ConnectionType.Previous);
+        Connection nextConnection = new Connection(this, new Vector2(-56, -33.7f), Connection.ConnectionType.Next);
+        Connection thenConnection = new Connection(this, new Vector2(-26.61f, -1.1f), Connection.ConnectionType.Inside1);
 
-		previousConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);
+        previousConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);
 		nextConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);
 		thenConnection.SetAcceptableBlockType (BlockType.BlockTypeInscrution);
 		// conditionConnection.SetAcceptableBlockType (BlockType.BlockTypeLogic);
