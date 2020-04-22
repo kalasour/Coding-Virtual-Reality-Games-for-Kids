@@ -33,12 +33,12 @@ public class ORB : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Bullet>() != null)
-            gameObject.SetActive(false);
+            Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Bullet>() != null)
-            gameObject.SetActive(false);
+            Destroy(gameObject);
     }
 }

@@ -25,7 +25,7 @@ public class MonsterController : MonoBehaviour
         }
         else if (hp > 0)
         {
-            HP.SetText((int)hp + "%");
+            HP.SetText((int)hp + " HP");
         }
     }
 

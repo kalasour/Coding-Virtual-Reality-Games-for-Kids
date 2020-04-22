@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
-public class Jump : SimpleInscructionBlock {
-    
-    override public void Run(){
-        Debug.Log("Jump\n");
-        // Player Player= GameObject.FindWithTag ("Player").GetComponent<Player> ();
-        // Player.Jump();
-
-        Codable toRunObj = GameObject.FindWithTag("Temp").GetComponent<Codable>();
-        toRunObj.Turn();
-        if (Next!=null)Next.Run();
+public class Jump : SimpleInscructionBlock
+{
+    public string parentId = "";
+    public GameObject[] Codables;
+    override public void Run()
+    {
+        parentId = transform.parent.gameObject.GetComponent<ID>().Id;
+        Codables = Resources.FindObjectsOfTypeAll<Codable>().Select(com => com.gameObject).ToArray<GameObject>();
+        foreach (GameObject code in Codables)
+        {
+            if (code.GetComponent<ID>().Id == parentId)
+            {
+                Codable toRunObj = code.GetComponent<Codable>();
+                toRunObj.Jump();
+                if (Next != null) Next.Run();
+            }
+        }
     }
 }

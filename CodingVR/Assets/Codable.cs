@@ -63,18 +63,18 @@ public class Codable : MonoBehaviour
 
         if (isUp)
         {
-            transform.Translate(transform.up, Space.World);
+            transform.Translate(transform.up*0.1f, Space.World);
 
             isUp = false;
         }
         if (isJump)
         {
-
-
-            if (rb != null)
+            if (this.GetComponent<OVRPlayerController>() != null)
+                this.GetComponent<OVRPlayerController>().Jump();
+            else if (rb != null)
             {
-                Debug.Log("Jump");
-                 rb.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce);
+
+                rb.AddForce(new Vector3(0.0f, 2.0f, 0.0f) * jumpForce);
                 //rb.velocity = new Vector3(0.0f, 2.0f, 0.0f) * jumpForce;
             }
 

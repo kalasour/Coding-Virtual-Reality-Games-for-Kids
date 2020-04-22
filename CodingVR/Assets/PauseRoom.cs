@@ -11,7 +11,9 @@ public class PauseRoom : MonoBehaviour
     public bool isPause = false;
     public GameObject ENVI = null;
     public GameObject LeftCanvas = null;
-    public GameObject RightCanvas = null;
+    GameObject RightCanvas = null;
+    public GameObject FrontCanvas = null;
+    public GameObject BackCanvas = null;
     public CharacterController playerController;
     bool canPress = true;
     void Start()
@@ -28,6 +30,8 @@ public class PauseRoom : MonoBehaviour
         }
         LeftCanvas = GameObject.Find("LeftCanvas");
         RightCanvas = GameObject.Find("RightCanvas");
+        FrontCanvas = GameObject.Find("FontCanvas");
+        BackCanvas = GameObject.Find("BackCanvas");
         if (Player != null)
         {
             playerController = Player.GetComponent<CharacterController>();
@@ -41,6 +45,14 @@ public class PauseRoom : MonoBehaviour
         if (!isPause) lastPlace = Player.transform.position;
         else Player.transform.position = lastPlace;
         isPause = !isPause;
+    }
+    public void Die()
+    {
+        if (!isPause) lastPlace = Player.transform.position;
+        else Player.transform.position = lastPlace;
+
+        Player.GetComponent<playerControlCustom>().enabled = false;
+        isPause = true;
     }
     void Update()
     {
@@ -69,6 +81,7 @@ public class PauseRoom : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = true;
+            Player.GetComponent<playerControlCustom>().enabled = true;
         }
 
 

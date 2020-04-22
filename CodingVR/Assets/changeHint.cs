@@ -7,10 +7,13 @@ public class changeHint : MonoBehaviour
 {
     // Start is called before the first frame update
     public string message = "";
-    public GameObject room = null;
+    public PauseRoom room = null;
+    public GameObject Selected = null;
+    public int index = 0;
     void Start()
     {
-        room = GameObject.Find("ROOM");
+        room = GameObject.Find("ROOM").GetComponent<PauseRoom>();
+
     }
 
     // Update is called once per frame
@@ -25,10 +28,12 @@ public class changeHint : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            GameObject left = room.GetComponent<PauseRoom>().LeftCanvas;
-            if (left != null)
+            if (index == 0) Selected = room.BackCanvas;
+            else if (index == 1) Selected = room.FrontCanvas;
+            else if (index == 2) Selected = room.LeftCanvas;
+            if (Selected != null)
             {
-                GameObject tmo = left.transform.GetChild(0).transform.GetChild(0).gameObject;
+                GameObject tmo = Selected.transform.GetChild(0).transform.GetChild(0).gameObject;
                 TextMeshProUGUI tm = tmo.GetComponent<TextMeshProUGUI>();
                 tm.SetText(message);
                 tm.color = Color.black;
