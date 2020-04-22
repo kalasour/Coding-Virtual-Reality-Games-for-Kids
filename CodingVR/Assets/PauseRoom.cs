@@ -5,18 +5,19 @@ using UnityEngine;
 public class PauseRoom : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform lastPlace = null;
+    public Vector3 lastPlace = Vector3.zero;
     public GameObject Player = null;
     public Transform Center = null;
     public bool isPause = false;
     public GameObject ENVI = null;
     public GameObject LeftCanvas = null;
     public GameObject RightCanvas = null;
+    public CharacterController playerController;
     bool canPress = true;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        lastPlace = Player.transform;
+        lastPlace = Player.transform.position;
         ENVI = GameObject.Find("ENVIRO_INTERACTABLE");
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -27,17 +28,27 @@ public class PauseRoom : MonoBehaviour
         }
         LeftCanvas = GameObject.Find("LeftCanvas");
         RightCanvas = GameObject.Find("RightCanvas");
-
+        if (Player != null)
+        {
+            playerController = Player.GetComponent<CharacterController>();
+        }
 
     }
 
     // Update is called once per frame
+    public void toggle()
+    {
+        if (!isPause) lastPlace = Player.transform.position;
+        else Player.transform.position = lastPlace;
+        isPause = !isPause;
+    }
     void Update()
     {
         if (Player == null || Center == null) return;
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || OVRInput.GetDown(OVRInput.Button.Four))
         {
-            isPause = !isPause;
+            toggle();
+
         }
         if (isPause)
         {
@@ -54,14 +65,26 @@ public class PauseRoom : MonoBehaviour
     public void Unpause()
     {
         Player.transform.parent = null;
-        Player.transform.position = lastPlace.position;
+
+        if (playerController != null)
+        {
+            playerController.enabled = true;
+        }
+
+
+
         ENVI.SetActive(true);
     }
     public void Pause()
     {
-        lastPlace = Player.transform;
+
+        if (playerController != null)
+        {
+            playerController.enabled = false;
+        }
         Player.transform.parent = Center;
         Player.transform.localPosition = Vector3.zero;
+
         ENVI.SetActive(false);
 
     }

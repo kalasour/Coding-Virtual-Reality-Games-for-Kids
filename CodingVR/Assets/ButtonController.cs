@@ -20,7 +20,10 @@ public class ButtonController : MonoBehaviour
     {
 
     }
-
+    public void Toggle()
+    {
+        GameObject.FindObjectOfType<PauseRoom>()?.GetComponent<PauseRoom>()?.toggle();
+    }
 
     public void Restart()
     {

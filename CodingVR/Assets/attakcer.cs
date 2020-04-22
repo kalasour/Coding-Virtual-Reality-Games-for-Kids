@@ -60,6 +60,7 @@ public class attakcer : MonoBehaviour
         //Reset the time when we shoot
         shotTime = Time.time;
         GameObject clone = Instantiate(projectile, (spawnPoint == null) ? (transform.position + (target.position - transform.position).normalized) : spawnPoint.position, noTarget ? transform.rotation : Quaternion.LookRotation((spawnPoint == null ? target.position : spawnPoint.position) - transform.position));
+        clone.SetActive(true);
         clone.GetComponent<Bullet>().enabled = true;
         clone.transform.parent = GameObject.Find("ENVIRO_INTERACTABLE").transform;
         if (speed != 0) clone.GetComponent<Bullet>().speed = speed;

@@ -10,6 +10,8 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public RectTransform Left, Mid, Bot;
     public GameObject Bott, Leftt;
     float upper, under;
+    public GameObject[] canvass;
+    public GameObject can = null;
     public class Connection
     {
         public const float kMinimumAttachRadius = 0.008f;
@@ -25,7 +27,8 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             this.relativePosition = relativePosition;
             this.connectionType = connectionType;
         }
-        public float getkMinimumAttachRadius() {
+        public float getkMinimumAttachRadius()
+        {
             return kMinimumAttachRadius;
         }
         public void SetAcceptableBlockType(BlockType acceptableBlockType)
@@ -89,10 +92,10 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                         ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1)).y;
             }
 
-            
-          return  new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x + this.ownerBlock.transform.position.x,
-                    ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1 + this.ownerBlock.transform.position.y,
-                    this.ownerBlock.transform.position.z);
+
+            return new Vector3(((this.ownerBlock.rectTransform.sizeDelta.x / 100 * this.relativePosition.x) - this.ownerBlock.rectTransform.sizeDelta.x / 2) * parentScale.x + this.ownerBlock.transform.position.x,
+                      ((this.ownerBlock.rectTransform.sizeDelta.y / 100 * this.relativePosition.y) - this.ownerBlock.rectTransform.sizeDelta.y / 2) * parentScale.y - tempX1 + this.ownerBlock.transform.position.y,
+                      this.ownerBlock.transform.position.z);
 
         }
         float DistanceTo(Connection connection)
@@ -227,6 +230,15 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         // this.GetComponent<Button> ().onClick.AddListener (Run);
         uiHelperPos = GameObject.Find("UIHelpers").transform.GetChild(1).transform;
+        canvass = GameObject.FindGameObjectsWithTag("Canvas");
+        foreach (GameObject c in canvass)
+        {
+            if (c.GetComponent<ID>() != null)
+                if (c.GetComponent<ID>().Id == "Canvas")
+                {
+                    can = c;
+                }
+        }
         aSource = gameObject.AddComponent<AudioSource>();
         this.rectTransform = gameObject.GetComponent<RectTransform>();
         this.image = gameObject.GetComponent<Image>();
@@ -412,7 +424,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             go.transform.SetParent(this.transform.parent, false);
             go.transform.SetSiblingIndex(this.transform.GetSiblingIndex());
 
-            this.transform.SetParent(GameObject.FindWithTag("Canvas").transform, false);
+            this.transform.SetParent((can ?? GameObject.FindWithTag("Canvas")).transform, false);
             this.leaveClone = false;
 
             go.GetComponent<RectTransform>().anchoredPosition = this.rectTransform.anchoredPosition;
@@ -432,7 +444,9 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         foreach (Block block in descendingBlocks)
         {
             Vector3 previousPosition = block.transform.position;
-            block.transform.SetParent(GameObject.FindWithTag("Canvas").transform, false);
+
+
+            block.transform.SetParent((can ?? GameObject.FindWithTag("Canvas")).transform, false);
             block.transform.position = previousPosition;
             block.transform.SetSiblingIndex(block.transform.parent.childCount - 1);
             block.SetShadowActive(true);
@@ -464,8 +478,10 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         //}
         GameObject[] AllC = GameObject.FindGameObjectsWithTag("CodeContent");
         GameObject codeContentGO = GameObject.FindWithTag("CodeContent");
-        foreach (GameObject c in AllC) {
-            if (c.GetComponent<CodeContent>().isCurrent) {
+        foreach (GameObject c in AllC)
+        {
+            if (c.GetComponent<CodeContent>().isCurrent)
+            {
                 codeContentGO = c;
             }
         }
