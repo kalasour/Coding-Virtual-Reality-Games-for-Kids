@@ -21,6 +21,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         public ConnectionType connectionType;
         public Vector3 relativePosition;
         public Transform relativeTransform;
+        public Vector3 defaultLocalPostion;
         public GameObject relativeObject;
         public Block connectedBlock;
         public BlockType acceptableBlockType;
@@ -33,7 +34,8 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             relativeTransform = relativeObject.transform;
             relativeTransform.SetParent(ownerBlock.transform);
             relativeTransform.localPosition = relativePosition;
-            relativeTransform.localScale =new Vector3(1, 1, 1);
+            defaultLocalPostion = relativePosition;
+            relativeTransform.localScale = new Vector3(1, 1, 1);
             this.connectionType = connectionType;
         }
         public float getkMinimumAttachRadius()
@@ -52,8 +54,8 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
         public Vector3 AbsolutePosition()
         {
-            Vector3 parentScale = GameObject.FindWithTag("Canvas").transform.localScale;
-            Vector3 parentPos = GameObject.FindWithTag("Canvas").transform.localPosition;
+            Vector3 parentScale = GameObject.Find("Canvas").transform.localScale;
+            Vector3 parentPos = GameObject.Find("Canvas").transform.localPosition;
             float tempX1 = 0;
             if (this.connectionType == ConnectionType.Next)
             {
@@ -74,6 +76,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                         tempX1 += In2.GetHeight();
                     }
                 }
+                this.relativeTransform.localPosition = this.defaultLocalPostion - new Vector3(0, tempX1);
                 this.ownerBlock.OnChangeNextDelta(new Vector3(0, -tempX1));
             }
             if (this.connectionType == ConnectionType.Inside2)
@@ -96,7 +99,6 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 this.ownerBlock.upper = this.relativeTransform.localPosition.y;
             }
-
 
             return this.relativeTransform.position;
 
@@ -233,15 +235,7 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         // this.GetComponent<Button> ().onClick.AddListener (Run);
         uiHelperPos = GameObject.Find("UIHelpers").transform.GetChild(1).transform;
-        canvass = GameObject.FindGameObjectsWithTag("Canvas");
-        foreach (GameObject c in canvass)
-        {
-            if (c.GetComponent<ID>() != null)
-                if (c.GetComponent<ID>().Id == "Canvas")
-                {
-                    can = c;
-                }
-        }
+        can = GameObject.Find("Canvas");
         aSource = gameObject.AddComponent<AudioSource>();
         this.rectTransform = gameObject.GetComponent<RectTransform>();
         this.image = gameObject.GetComponent<Image>();
@@ -283,11 +277,16 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         if (_Next != delta)
         {
-            if (this.Next != null) this.Next.ApplyDelta(delta - _Next);
+            if (this.Next != null) this.Next.ApplyLocalDelta(delta - _Next);
             Vector2 oldPos = Bot.anchoredPosition;
-            Bott.transform.position = Bott.transform.position + new Vector3(0, (delta.y - _Next.y));
+            Bott.transform.localPosition = Bott.transform.localPosition + new Vector3(0, (delta.y - _Next.y));
             Left.anchoredPosition = Left.anchoredPosition + new Vector2(0, (Bot.anchoredPosition.y - oldPos.y)) / 2;
             Left.sizeDelta = Left.sizeDelta - new Vector2(0, (Bot.anchoredPosition.y - oldPos.y));
+
+
+
+
+
             // Bot.anchoredPosition=Bot.anchoredPosition+(delta-_Next);
             // Leftt.transform.position = Leftt.transform.position + new Vector3 (0, (delta.y - _Next.y) );
             // Leftt.transform.localScale = new Vector3(Leftt.transform.localScale.x,Leftt.transform.localScale.y + (delta.y-_Next.y));
@@ -299,9 +298,9 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         if (_Inside2 != delta)
         {
-            if (this.Inside2 != null) this.Inside2.ApplyDelta(delta - _Inside2);
+            if (this.Inside2 != null) this.Inside2.ApplyLocalDelta(delta - _Inside2);
             Vector2 oldPos = Bot.anchoredPosition;
-            Bott.transform.position = Bott.transform.position + new Vector3(0, (delta.y - _Inside2.y));
+            Bott.transform.localPosition = Bott.transform.localPosition + new Vector3(0, (delta.y - _Inside2.y));
             Left.anchoredPosition = Left.anchoredPosition + new Vector2(0, (Bot.anchoredPosition.y - _Inside2.y)) / 2;
             Left.sizeDelta = Left.sizeDelta - new Vector2(0, (Bot.anchoredPosition.y - oldPos.y));
             _Inside2 = delta;
@@ -314,6 +313,15 @@ public abstract class Block : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         foreach (Block block in descendingBlocks)
         {
             block.transform.position = block.transform.position + delta;
+        }
+    }
+    public void ApplyLocalDelta(Vector3 delta)
+    {
+        ArrayList descendingBlocks = this.DescendingBlocks();
+
+        foreach (Block block in descendingBlocks)
+        {
+            block.transform.localPosition = block.transform.localPosition + delta;
         }
     }
     public int GetLength()
