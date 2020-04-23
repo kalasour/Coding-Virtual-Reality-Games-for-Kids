@@ -16,11 +16,16 @@ public class Complete : MonoBehaviour
     {
 
     }
+    public void CompleteMission()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            CompleteMission();
         }
     }
 
@@ -28,7 +33,7 @@ public class Complete : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            CompleteMission();
         }
     }
 }
