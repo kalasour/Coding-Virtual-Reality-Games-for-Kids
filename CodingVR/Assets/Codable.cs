@@ -17,6 +17,7 @@ public class Codable : MonoBehaviour
     public float jumpForce = 2.0f;
     int count = 0;
     public GameObject ray = null;
+    public float forwardSpeed = 0.1f;
     public GameObject bat = null;
     void Start()
     {
@@ -50,20 +51,20 @@ public class Codable : MonoBehaviour
                     }
                 }
             }
-            if (Door != null&&!Door.GetComponent<SceneControllerScript>().doorFlag) Door.GetComponent<SceneControllerScript>().doorToggle = true;
+            if (Door != null && !Door.GetComponent<SceneControllerScript>().doorFlag) Door.GetComponent<SceneControllerScript>().doorToggle = true;
             if (bat != null) bat.SetActive(true);
             isOpen = false;
         }
         if (isForward)
         {
-            transform.Translate(transform.forward * 0.1f, Space.World);
+            transform.Translate(transform.forward * forwardSpeed, Space.World);
 
             isForward = false;
         }
 
         if (isUp)
         {
-            transform.Translate(transform.up*0.1f, Space.World);
+            transform.Translate(transform.up * 0.1f, Space.World);
 
             isUp = false;
         }

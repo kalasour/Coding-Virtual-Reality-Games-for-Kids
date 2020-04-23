@@ -91,7 +91,7 @@ public class PauseRoom : MonoBehaviour
     }
     public void Pause()
     {
-
+        if (Player.transform.parent == Center.transform) return;
         if (playerController != null)
         {
             playerController.enabled = false;

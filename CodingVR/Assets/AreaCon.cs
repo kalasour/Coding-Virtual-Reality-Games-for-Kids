@@ -19,11 +19,11 @@ public class AreaCon : MonoBehaviour
         {
             GameObject Go = transform.GetChild(i).gameObject;
             if (last == null) last = Go;
-            if (Go.GetComponent<toggleArea>().state && Go != last)
+            if (Go.GetComponent<toggleArea>().currentState && Go != last)
             {
-                last.SetActive(true);
-                last = Go;
-                Go.SetActive(false);
+                //last.SetActive(true);
+                //  last = Go;
+                //  Go.SetActive(false);
             }
         }
     }
