@@ -443,10 +443,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6435501733406416167, guid: de3c23d0715664f99b34976c4e31a6a9,
+      - m_Target: {fileID: 3541602847129288449, guid: 55597e321f765c847b690e77dcfd947f,
           type: 3}
-        m_MethodName: Restart
-        m_Mode: 1
+        m_MethodName: loadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

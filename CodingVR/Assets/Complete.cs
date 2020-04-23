@@ -21,6 +21,12 @@ public class Complete : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void loadScene(int index)
+    {
+
+        SceneManager.LoadScene(index);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
