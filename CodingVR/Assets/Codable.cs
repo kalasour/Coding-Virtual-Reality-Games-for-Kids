@@ -102,7 +102,7 @@ public class Codable : MonoBehaviour
 
     }
 
-    public void Turn()
+    public void TurnRight()
     {
         isTurned = true;
     }

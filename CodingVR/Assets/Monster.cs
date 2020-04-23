@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     public Animation_Test Anim;
     public TextMeshPro HP;
-    private float hp = 100;
+    public float hp = 100;
     void Start()
     {
         Anim = gameObject.GetComponent<Animation_Test>();
