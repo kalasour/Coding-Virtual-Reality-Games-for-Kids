@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class walkToPlayer : MonoBehaviour {
+public class walkToPlayer : MonoBehaviour
+{
     private Transform target;
 
     public float maximumLookDistance = 30;
@@ -15,25 +16,29 @@ public class walkToPlayer : MonoBehaviour {
 
     private float shotTime = 0;
     public float speed = 3;
-    private void Start () {
-        target = GameObject.FindGameObjectWithTag ("Player").transform;
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    void Update () {
-        var distance = Vector3.Distance (target.position, transform.position);
+    void Update()
+    {
+        var distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= maximumLookDistance) {
-            LookAtTarget ();
+        if (distance <= maximumLookDistance && gameObject.GetComponent<MonsterController>().hp > 0)
+        {
+            LookAtTarget();
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards (transform.position, target.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
         }
 
     }
 
-    void LookAtTarget () {
+    void LookAtTarget()
+    {
         var dir = target.position - transform.position;
         dir.y = 0;
-        var rotation = Quaternion.LookRotation (dir);
-        transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationDamping);
+        var rotation = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
     }
 }

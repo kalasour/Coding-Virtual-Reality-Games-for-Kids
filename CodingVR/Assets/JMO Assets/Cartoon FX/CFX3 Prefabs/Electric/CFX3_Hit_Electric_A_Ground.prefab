@@ -23672,5 +23672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: electric_blast
-  volume: 0.1
+  volume: 0.8
   maxDistance: 100
+  loop: 0
