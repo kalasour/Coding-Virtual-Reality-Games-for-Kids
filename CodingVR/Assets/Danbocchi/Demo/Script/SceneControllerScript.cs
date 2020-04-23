@@ -13,7 +13,7 @@ public class SceneControllerScript : MonoBehaviour {
 	public GameObject[] SilencerObject;
 
 	private bool rotateFlag = false;
-	private bool doorFlag = false;
+	public bool doorFlag = false;
 	public bool doorToggle = false;
 	private bool panelFlag = false;
 	private float speed = 0.02f;

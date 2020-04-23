@@ -5,11 +5,10 @@ using UnityEngine;
 public class toggleArea : MonoBehaviour {
     // Start is called before the first frame update
     public GameObject targetTrigger;
-    public BooleanExplain targetText;
     public string booString;
-    public bool state;
+    public bool state=true;
     void Start () {
-
+        if (targetTrigger == null) targetTrigger = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -18,41 +17,34 @@ public class toggleArea : MonoBehaviour {
     }
 
     private void OnTriggerEnter (Collider other) {
-        // if (other.gameObject == targetTrigger)
+         if (other.gameObject == targetTrigger)
         if (true) {
             GameObject[] found = GameObject.FindGameObjectsWithTag ("Block");
             foreach (GameObject i in found) {
                 if (i.GetComponent<Boolean> () != null) {
                     Boolean boo = i.GetComponent<Boolean> ();
                     if (boo.ID == booString) {
-                        state = true;
-                        boo.value = true;
+                        boo.value = state;
                     }
                 }
             }
-        }
-        if (other.gameObject.CompareTag ("Player") && targetText != null) {
-            targetText.isOn = true;
         }
     }
 
     private void OnTriggerExit (Collider other) {
-        // if (other.gameObject == targetTrigger)
+         if (other.gameObject == targetTrigger)
         if (true) {
             GameObject[] found = GameObject.FindGameObjectsWithTag ("Block");
             foreach (GameObject i in found) {
                 if (i.GetComponent<Boolean> () != null) {
                     Boolean boo = i.GetComponent<Boolean> ();
                     if (boo.ID == booString) {
-                        state = false;
-                        boo.value = false;
+                        boo.value = !state;
                     }
                 }
             }
         }
-        if (other.gameObject.CompareTag ("Player") && targetText != null) {
-            targetText.isOn = false;
-        }
+
     }
 
     private void OnDisable () {
@@ -61,13 +53,10 @@ public class toggleArea : MonoBehaviour {
             if (i.GetComponent<Boolean> () != null) {
                 Boolean boo = i.GetComponent<Boolean> ();
                 if (boo.ID == booString) {
-                    state = false;
-                    boo.value = false;
+                    boo.value = !state;
                 }
             }
         }
-        if (targetText != null) {
-            targetText.isOn = false;
-        }
+
     }
 }

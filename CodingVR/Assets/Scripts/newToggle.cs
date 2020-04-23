@@ -30,10 +30,6 @@ public class newToggle : MonoBehaviour
         {
             TaskOnClick();
         }
-        if (OVRInput.GetDown(OVRInput.Button.Four))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
         if (OVRInput.GetDown(OVRInput.Button.Three))
         {
             RunCode();

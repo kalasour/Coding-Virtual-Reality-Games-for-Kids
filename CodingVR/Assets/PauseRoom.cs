@@ -76,6 +76,7 @@ public class PauseRoom : MonoBehaviour
 
     public void Unpause()
     {
+        if (Player.transform.parent != Center.transform) return;
         Player.transform.parent = null;
 
         if (playerController != null)

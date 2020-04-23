@@ -9,6 +9,7 @@ public class CodeContent : MonoBehaviour
     CanvasGroup canvasGroup;
     void Start()
     {
+        if (gameObject.GetComponent<CanvasGroup>() == null) gameObject.AddComponent<CanvasGroup>();
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
     }
 

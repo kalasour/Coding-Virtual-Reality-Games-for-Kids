@@ -7,9 +7,12 @@ public class autoGetEventCamera : MonoBehaviour
     // Start is called before the first frame update
     public Camera currentCamera = null;
     private Canvas canvas = null;
+    private OVRRaycaster OVR = null;
     void Start()
     {
         canvas = GetComponent<Canvas>();
+        OVR = GetComponent<OVRRaycaster>();
+        OVR.pointer = GameObject.Find("UIHelpers");
         GameObject co = GameObject.Find("CenterEyeAnchor");
         if (co == null) co = GameObject.Find("FirstPersonCharacter");
         if (co != null) currentCamera = co.GetComponent<Camera>();

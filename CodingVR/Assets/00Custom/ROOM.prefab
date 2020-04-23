@@ -1116,7 +1116,8 @@ MonoBehaviour:
   isPause: 0
   ENVI: {fileID: 0}
   LeftCanvas: {fileID: 0}
-  RightCanvas: {fileID: 0}
+  FrontCanvas: {fileID: 0}
+  BackCanvas: {fileID: 0}
   playerController: {fileID: 0}
 --- !u!1 &5709430695483706511
 GameObject:

@@ -5,7 +5,6 @@ using UnityEngine;
 public class AttachPlatform : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject Player;
     void Start()
     {
         
@@ -19,16 +18,16 @@ public class AttachPlatform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Player) {
-            Player.transform.parent = transform;
+        if (other.gameObject.tag == "Player") {
+            other.gameObject.transform.parent = transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == Player)
+        if (other.gameObject.tag == "Player")
         {
-            Player.transform.parent = null;
+            other.gameObject.transform.parent = null;
         }
     }
 }

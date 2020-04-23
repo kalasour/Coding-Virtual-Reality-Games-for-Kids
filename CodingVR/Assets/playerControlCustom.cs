@@ -12,6 +12,7 @@ public class playerControlCustom : MonoBehaviour
     void Start()
     {
         pauseRoom = GameObject.Find("ROOM").GetComponent<PauseRoom>();
+        healthBar = GameObject.Find("Simple Bar").GetComponent<SimpleHealthBar>();
     }
 
     // Update is called once per frame

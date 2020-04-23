@@ -50,13 +50,13 @@ public class Codable : MonoBehaviour
                     }
                 }
             }
-            if (Door != null) Door.GetComponent<SceneControllerScript>().doorToggle = true;
+            if (Door != null&&!Door.GetComponent<SceneControllerScript>().doorFlag) Door.GetComponent<SceneControllerScript>().doorToggle = true;
             if (bat != null) bat.SetActive(true);
             isOpen = false;
         }
         if (isForward)
         {
-            transform.Translate(transform.forward, Space.World);
+            transform.Translate(transform.forward * 0.1f, Space.World);
 
             isForward = false;
         }
